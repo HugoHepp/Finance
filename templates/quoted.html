@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+    {% if search == None %}
+    <p>Symbol not found..</p>
+    {% endif %}
+
+    {% if search != None %}
+    <p>A share of {{search['name']}} costs : $ {{search['price']}} </p>
+    {% endif %}
+{% endblock %}

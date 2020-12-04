@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+
+    <table id="result_theme" class="table table-light">
+  <thead>
+    <tr>
+      <th scope="col">Symbol</th>
+      <th scope="col">Name</th>
+      <th scope="col">Date</th>
+      <th scope="col">Price</th>
+      <th scope="col">Shares</th>
+      <th scope="col">Total</th>
+       <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+      {% for i in range(0,lenght) %}
+    <tr>
+      <td>{{userdata[i]["symbol"]}}</td>
+      <td>{{userdata[i]["name"]}}</td>
+      <td>{{userdata[i]["date"]}}</td>
+      <td>$ {{userdata[i]["price"]}}</td>
+      <td>{{userdata[i]["share"]}}</td>
+      <td>$ {{userdata[i]["price"] * userdata[i]["share"]}}</td>
+      <td>{{userdata[i]["action"]}}</td>
+    </tr>
+      {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
